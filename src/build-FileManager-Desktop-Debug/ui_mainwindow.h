@@ -57,7 +57,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(402, 262);
+        MainWindow->resize(582, 325);
         actionFile = new QAction(MainWindow);
         actionFile->setObjectName(QString::fromUtf8("actionFile"));
         actionSearch = new QAction(MainWindow);
@@ -86,29 +86,29 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(0, 0, 91, 51));
+        pushButton->setGeometry(QRect(0, 0, 91, 71));
         QFont font;
         font.setPointSize(10);
         pushButton->setFont(font);
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(0, 50, 91, 51));
+        pushButton_2->setGeometry(QRect(0, 70, 91, 71));
         pushButton_2->setFont(font);
         pushButton_3 = new QPushButton(centralWidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(0, 100, 91, 51));
+        pushButton_3->setGeometry(QRect(0, 140, 91, 61));
         pushButton_3->setFont(font);
         pushButton_4 = new QPushButton(centralWidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(0, 150, 91, 51));
+        pushButton_4->setGeometry(QRect(0, 200, 91, 61));
         pushButton_4->setFont(font);
         treeView = new QTreeView(centralWidget);
         treeView->setObjectName(QString::fromUtf8("treeView"));
-        treeView->setGeometry(QRect(90, 0, 311, 201));
+        treeView->setGeometry(QRect(90, 0, 491, 271));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 402, 22));
+        menuBar->setGeometry(QRect(0, 0, 582, 22));
         menuFileManager = new QMenu(menuBar);
         menuFileManager->setObjectName(QString::fromUtf8("menuFileManager"));
         menuEdit = new QMenu(menuBar);
