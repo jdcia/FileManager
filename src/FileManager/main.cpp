@@ -10,12 +10,6 @@ int main(int argc, char *argv[])
 
     QObjectList x = w.children();
 
-
-    for(int i = 0; i < x.size(); i++){
-        std::cout << x.takeAt(i)->objectName().toStdString() << "\n";
-    }
-
-
     w.show();
 
     return a.exec();

@@ -7,18 +7,18 @@
     <x>0</x>
     <y>0</y>
     <width>582</width>
-    <height>325</height>
+    <height>326</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="new_directory">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>20</y>
       <width>91</width>
       <height>71</height>
      </rect>
@@ -32,11 +32,11 @@
      <string>New Directory</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="new_file">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>70</y>
+      <y>90</y>
       <width>91</width>
       <height>71</height>
      </rect>
@@ -50,11 +50,11 @@
      <string>New File</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="remove">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>140</y>
+      <y>160</y>
       <width>91</width>
       <height>61</height>
      </rect>
@@ -68,11 +68,11 @@
      <string>Remove</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="rename">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>200</y>
+      <y>220</y>
       <width>91</width>
       <height>61</height>
      </rect>
@@ -83,57 +83,64 @@
      </font>
     </property>
     <property name="text">
-     <string>Undo</string>
+     <string>Rename</string>
     </property>
    </widget>
    <widget class="QTreeView" name="treeView">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>0</y>
+      <y>20</y>
       <width>491</width>
-      <height>271</height>
+      <height>261</height>
      </rect>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>582</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuFileManager">
-    <property name="title">
-     <string>File</string>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
     </property>
-    <addaction name="actionFile"/>
-    <addaction name="actionUndo"/>
-   </widget>
-   <widget class="QMenu" name="menuEdit">
-    <property name="title">
-     <string>Edit</string>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
     </property>
-    <addaction name="actionRemove_File_Directory"/>
-    <addaction name="actionNew_FIle"/>
-    <addaction name="actionNew_Directory"/>
-    <addaction name="actionUndo_2"/>
-    <addaction name="actionRedo_2"/>
-   </widget>
-   <widget class="QMenu" name="menuSearch">
-    <property name="title">
-     <string>Search</string>
+    <property name="text">
+     <string>Directory</string>
     </property>
-    <addaction name="actionSearch_For_Folder"/>
-    <addaction name="actionSearch_For_File"/>
-    <addaction name="actionSearch_by_Keyword"/>
    </widget>
-   <addaction name="menuFileManager"/>
-   <addaction name="menuEdit"/>
-   <addaction name="menuSearch"/>
+   <widget class="QPushButton" name="go_button">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>0</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Go</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="directory_browser">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>0</y>
+      <width>441</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -160,66 +167,6 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <action name="actionFile">
-   <property name="text">
-    <string>Open Folder</string>
-   </property>
-  </action>
-  <action name="actionSearch">
-   <property name="text">
-    <string>Search</string>
-   </property>
-  </action>
-  <action name="actionUndo">
-   <property name="text">
-    <string>Open File</string>
-   </property>
-  </action>
-  <action name="actionRedo">
-   <property name="text">
-    <string>Redo</string>
-   </property>
-  </action>
-  <action name="actionRemove_File_Directory">
-   <property name="text">
-    <string>Remove File/Directory</string>
-   </property>
-  </action>
-  <action name="actionNew_FIle">
-   <property name="text">
-    <string>New FIle</string>
-   </property>
-  </action>
-  <action name="actionNew_Directory">
-   <property name="text">
-    <string>New Directory</string>
-   </property>
-  </action>
-  <action name="actionUndo_2">
-   <property name="text">
-    <string>Undo</string>
-   </property>
-  </action>
-  <action name="actionRedo_2">
-   <property name="text">
-    <string>Redo</string>
-   </property>
-  </action>
-  <action name="actionSearch_For_Folder">
-   <property name="text">
-    <string>Search For Folder</string>
-   </property>
-  </action>
-  <action name="actionSearch_For_File">
-   <property name="text">
-    <string>Search For File</string>
-   </property>
-  </action>
-  <action name="actionSearch_by_Keyword">
-   <property name="text">
-    <string>Search by Keyword</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
