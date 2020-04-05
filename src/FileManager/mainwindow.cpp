@@ -72,6 +72,40 @@ void MainWindow::goto_directory(QString directory){
 
 }
 
+void MainWindow::send_dialog(QString file, QString type){
+
+    if(type == "new_file"){
+        create_file(file);
+    }
+    else if(type == "new_dir"){
+        create_dir(file);
+    }
+    else if(type == "rename_file"){
+        rename_file(file);
+    }
+
+}
+
+void MainWindow::create_file(QString file){
+    //create file from path given
+
+    std::cout << "Create file = " << file.toStdString() << "\n";
+}
+
+void MainWindow::create_dir(QString file){
+    //create directory from path given
+
+    std::cout << "create dir = " << file.toStdString() << "\n";
+}
+
+void MainWindow::rename_file(QString file){
+    //rename file
+
+    //may need to edit to take in original filename aswell.
+
+    std::cout << "rename file = " << file.toStdString() << "\n";
+}
+
 
 //QT made functions-----------------------------------------------------------------------------------
 
@@ -79,13 +113,16 @@ void MainWindow::goto_directory(QString directory){
 
 void MainWindow::on_new_directory_clicked()
 {
+    //create popup window for user input
 
-
+    //connect signal to slot after new windows is made
 }
 
 void MainWindow::on_new_file_clicked()
 {
+    //create popup window for user input
 
+    //connect signal to slot after new window is made
 }
 
 void MainWindow::on_remove_clicked()

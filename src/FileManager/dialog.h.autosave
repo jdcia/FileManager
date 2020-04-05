@@ -27,6 +27,8 @@ private slots:
 
     void on_Select_clicked();
 
+    void on_plainTextEdit_textChanged();
+    
 signals:
 
     void send_dialog(QString filename, QString type);

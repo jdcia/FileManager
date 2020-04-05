@@ -18,7 +18,6 @@ public:
     QString last_dir;
     QString current_dir;
     QFileSystemModel *model;
-
     //Need to reorganize this.
 
     //Functions
@@ -29,7 +28,15 @@ public:
     void update_browser();
     void update_tree();
 
+    void create_file(QString file);
+    void create_dir(QString file);
+    void rename_file(QString file);
+
 private slots:
+
+    //non-qtcreator slots
+    void send_dialog(QString filename, QString type);
+    //-----------------------------------
 
     void on_new_directory_clicked();
 
