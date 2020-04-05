@@ -17,7 +17,6 @@ public:
     //Variables
     QString last_dir;
     QString current_dir;
-    QList<QString> path;
     QFileSystemModel *model;
 
     //Need to reorganize this.
@@ -28,6 +27,7 @@ public:
     void init_tree();
     void goto_directory(QString directory);
     void update_browser();
+    void update_tree();
 
 private slots:
 
