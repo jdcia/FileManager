@@ -15,6 +15,7 @@ public:
     explicit Dialog(QWidget *parent = nullptr);
 
     void set_type(QString type);
+    void set_text(QString text);
 
     ~Dialog();
 
@@ -26,6 +27,8 @@ private slots:
     void on_Cancel_clicked();
 
     void on_Select_clicked();
+
+    void on_plainTextEdit_textChanged();
 
 signals:
 

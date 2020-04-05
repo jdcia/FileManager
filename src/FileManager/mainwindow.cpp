@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "dialog.h"
 #include "ui_mainwindow.h"
 #include <iostream>
 #include <qfilesystemmodel.h>
@@ -83,19 +84,38 @@ void MainWindow::send_dialog(QString file, QString type){
     else if(type == "rename_file"){
         rename_file(file);
     }
+    else if (type == "remove_file"){
+        remove_file(file);
+    }
 
 }
 
 void MainWindow::create_file(QString file){
     //create file from path given
 
-    std::cout << "Create file = " << file.toStdString() << "\n";
+    QString new_dir = current_dir;
+    new_dir.append("/");
+    new_dir.append(file);
+
+    std::cout << "create file = " << new_dir.toStdString() << "\n";
+
+
+
 }
 
 void MainWindow::create_dir(QString file){
     //create directory from path given
 
-    std::cout << "create dir = " << file.toStdString() << "\n";
+
+
+    QString new_dir = current_dir;
+    new_dir.append("/");
+    new_dir.append(file);
+
+    std::cout << "create dir = " << new_dir.toStdString() << "\n";
+
+
+    //QDir::mkdir(new_dir);
 }
 
 void MainWindow::rename_file(QString file){
@@ -103,7 +123,16 @@ void MainWindow::rename_file(QString file){
 
     //may need to edit to take in original filename aswell.
 
-    std::cout << "rename file = " << file.toStdString() << "\n";
+    std::cout << "rename file = " << this->selected_file.toStdString() << " New File name = " << file.toStdString() << "\n";
+}
+
+void MainWindow::remove_file(QString file){
+
+    if(file == "approve"){
+
+        std::cout << "Remove file = " << this->selected_file.toStdString() << "\n";
+    }
+
 }
 
 
@@ -113,21 +142,53 @@ void MainWindow::rename_file(QString file){
 
 void MainWindow::on_new_directory_clicked()
 {
-    //create popup window for user input
+    Dialog popup;
 
-    //connect signal to slot after new windows is made
+    popup.set_type("new_dir");
+
+    popup.set_text("Please enter the name of the directory to be created.");
+
+    QObject::connect(&popup, &Dialog::send_dialog, this, &MainWindow::send_dialog);
+
+    popup.show();
+
+    popup.exec();
+
 }
 
 void MainWindow::on_new_file_clicked()
 {
-    //create popup window for user input
 
-    //connect signal to slot after new window is made
+    Dialog popup;
+
+    popup.set_type("new_file");
+
+    popup.set_text("Please enter the name of the file to be created.");
+
+    QObject::connect(&popup, &Dialog::send_dialog, this, &MainWindow::send_dialog);
+
+    popup.show();
+
+    popup.exec();
+
+
+
+
 }
 
 void MainWindow::on_remove_clicked()
 {
+    Dialog popup;
 
+    popup.set_type("remove_file");
+
+    popup.set_text("Please type approve to delete the file.");
+
+    QObject::connect(&popup, &Dialog::send_dialog, this, &MainWindow::send_dialog);
+
+    popup.show();
+
+    popup.exec();
 
 
 }
@@ -135,7 +196,17 @@ void MainWindow::on_remove_clicked()
 void MainWindow::on_rename_clicked()
 {
 
+    Dialog popup;
 
+    popup.set_type("rename_file");
+
+    popup.set_text("Please enter the new name of the file.");
+
+    QObject::connect(&popup, &Dialog::send_dialog, this, &MainWindow::send_dialog);
+
+    popup.show();
+
+    popup.exec();
 
 }
 
@@ -166,4 +237,9 @@ void MainWindow::on_go_button_clicked()
 
     goto_directory(ui->directory_browser->placeholderText());
 
+}
+
+void MainWindow::on_treeView_clicked(const QModelIndex &index)
+{
+    this->selected_file = model->filePath(index);
 }

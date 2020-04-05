@@ -12,6 +12,10 @@ void Dialog::set_type(QString t){
     this->type = t;
 }
 
+void Dialog::set_text(QString text){
+    ui->label->setText(text);
+}
+
 Dialog::~Dialog()
 {
     delete ui;
@@ -21,8 +25,7 @@ Dialog::~Dialog()
 
 void Dialog::on_Cancel_clicked()
 {
-    Dialog::~Dialog();
-
+    this->close();
 }
 
 void Dialog::on_Select_clicked()
@@ -30,7 +33,7 @@ void Dialog::on_Select_clicked()
 
     emit send_dialog(this->user_response, this->type);
 
-    Dialog::~Dialog();
+    this->close();
 
 }
 

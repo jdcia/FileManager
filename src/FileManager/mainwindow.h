@@ -18,6 +18,7 @@ public:
     QString last_dir;
     QString current_dir;
     QFileSystemModel *model;
+    QString selected_file;
     //Need to reorganize this.
 
     //Functions
@@ -31,6 +32,7 @@ public:
     void create_file(QString file);
     void create_dir(QString file);
     void rename_file(QString file);
+    void remove_file(QString file);
 
 private slots:
 
@@ -52,6 +54,8 @@ private slots:
 
 
     void on_go_button_clicked();
+
+    void on_treeView_clicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;
