@@ -133,6 +133,7 @@ void MainWindow::remove_file(QString file){
         std::cout << "Remove file = " << this->selected_file.toStdString() << "\n";
     }
 
+
 }
 
 
